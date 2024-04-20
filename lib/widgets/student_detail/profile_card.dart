@@ -12,7 +12,7 @@ class ProfieCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: MediaQuery.of(context).size.height / 4,
+        padding: const EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
           gradient: const LinearGradient(

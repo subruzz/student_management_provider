@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sutdent_provider/models/student_model.dart';
 import 'package:sutdent_provider/provider/student_provider.dart';
 import 'package:sutdent_provider/screens/add_student.dart';
 import 'package:sutdent_provider/widgets/student_detail/contact_card.dart';
@@ -53,15 +52,22 @@ class DetailedStudetnt extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
         actions: [
           IconButton(
               onPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddStudentPage(student: currentStudent),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        AddStudentPage(student: currentStudent),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.edit,

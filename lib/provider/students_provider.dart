@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:sutdent_provider/utils/hive_box.dart';
-import 'package:sutdent_provider/database/hive.dart';
 import 'package:sutdent_provider/models/student_model.dart';
 
 class StudentProvider extends ChangeNotifier {
@@ -21,8 +20,8 @@ class StudentProvider extends ChangeNotifier {
   // Method to add a student
   Future<void> addStudent(StudentModel student) async {
     try {
-      await HiveHelper.addStudent(student);
-      _students.add(student);
+      await box.add(student);
+      _students = box.values.toList();
       notifyListeners();
     } catch (e) {
       print(e);

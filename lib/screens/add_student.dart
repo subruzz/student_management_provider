@@ -94,9 +94,6 @@ class _AddStudentPageState extends State<AddStudentPage> {
                                 keyboardType: TextInputType.number,
                                 icon: Icons.calendar_view_day_sharp),
                           ),
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.calendar_month))
                         ],
                       ),
                       k20Height,
